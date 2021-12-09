@@ -1,0 +1,67 @@
+import java.util.*;
+abstract class shape
+{
+int a,b;
+abstract void printarea();
+}
+class rectangle extends shape
+{
+void getr(int x,int y)
+{
+a=x;
+b=y;
+}
+void printarea()
+{
+System.out.println("The area of rectangle is "+(a*b));
+}
+}
+class triangle extends shape
+{
+void gett(int x,int y)
+{
+a=x;
+b=y;     
+}
+void printarea()
+{
+System.out.println("The area of triangle is "+(0.5*a*b));
+}
+}
+class circle extends shape
+{
+void getc(int x)
+{
+a=x;
+}
+void printarea()
+{
+System.out.println("The area of circle is "+(3.14*a*a));
+}
+}
+class Mainclass
+{
+public static void main(String args[])
+{
+int l,b,ba,h,ra;
+Scanner sc=new Scanner(System.in);
+rectangle r=new rectangle();
+triangle t=new triangle();
+circle c=new circle();
+System.out.println("Enter the dimensions of rectangle");
+l=sc.nextInt();
+b=sc.nextInt();
+r.getr(l,b);
+r.printarea();
+System.out.println("Enter the dimensions of triangle");
+ba=sc.nextInt();
+h=sc.nextInt();
+t.gett(ba,h);
+t.printarea();
+System.out.println("Enter radius of circle");
+ra=sc.nextInt();
+c.getc(ra);
+c.printarea();
+}
+}
+
